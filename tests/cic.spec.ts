@@ -3,15 +3,14 @@ import { LoginPage } from '../pages/POM';
 import { AUTH, COMMON } from '../constants/constant';
 
 test.beforeEach(async ({page}) =>{
-    
-    const Login = new LoginPage(page)
-    Login.testLogin()                 //created object from POM
+    const Login = new LoginPage(page) //created object from POM
+    Login.goToLogin()                 
     await Login.login(AUTH.EMAIL, AUTH.PASSWORD)
     await page.waitForTimeout(5000)
     
 })
 
-test('Verify that user can create , edit and delete contact', async ({ page }) => {
+test('Verify that user can create, edit and delete contact', async ({ page }) => {
     //Creating a Contact
     await page.getByRole('link', { name: ' Contacts' }).click();
     await page.getByRole('button', { name: 'Add Contact' }).click();
@@ -33,7 +32,7 @@ test('Verify that user can create , edit and delete contact', async ({ page }) =
     await page.waitForTimeout(3000)
   });
 
-test('verify that user can create , edit and delete impact areas', async ({ page }) => {
+test('verify that user can create, edit and delete impact areas', async ({ page }) => {
     // Creating Impact Area
     await page.getByText('Impact Areas').click();
     await page.getByRole('button', { name: 'New Impact Area' }).click();
@@ -58,7 +57,7 @@ test('verify that user can create , edit and delete impact areas', async ({ page
     await page.waitForTimeout(3000)
   });
 
-test('Verify that user can create edit and delete campaign', async ({ page }) => {
+test('Verify that user can create, edit and delete campaign', async ({ page }) => {
     //Creating a Campaign
     await page.getByText('Campaigns').click();
     await page.getByRole('button', { name: 'Create Campaign' }).click();

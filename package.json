@@ -1,11 +1,10 @@
 {
   "name": "playwrightbegineers",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "start": "npx playwright test tests/cic.spec.ts --project=chromium"
+  },
+  "author": "Manisha Kasalawat",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.31.2"

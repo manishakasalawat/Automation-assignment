@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../pages/POM';
+import { LoginPage } from '../pages/Login';
 import { AUTH, COMMON } from '../constants/constant';
 
 test.beforeEach(async ({page}) =>{
